@@ -11,7 +11,11 @@ const LinkButton = ({ children, to }) => {
       </button>
     );
   }
-  return <Link to={to}>{children}</Link>;
+  return (
+    <Link to={to} className={className}>
+      {children}
+    </Link>
+  );
 };
 
 export default LinkButton;
