@@ -8,7 +8,7 @@ const AppLayout = () => {
   const isLoading = navigation.state === "loading";
   console.log(navigation);
   return (
-    <div className="layout">
+    <div className="grid bg-red-500 h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
       <main>
