@@ -26,7 +26,7 @@ function Order() {
 
   return (
     <div className="px-4 py-6">
-      <div className="flex flex-wrap items-center gap-2 justify-normal">
+      <div className="flex flex-wrap items-center gap-4 mb-4 justify-normal ">
         <h2 className="text-xl font-semibold">Order #{id} status</h2>
 
         <div className="space-x-2 ">
@@ -76,6 +76,7 @@ function Order() {
 
 export const loader = async ({ params }) => {
   const order = await getOrder(params.orderId);
+  return order; 
 };
 
 export default Order;
