@@ -1,10 +1,14 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function CartOverview() {
+  const totalCartQuantity = useSelector((state) =>
+    state.cart.cart.reduce((sum, item) => sum + item.quantity, 0)
+  );
   return (
     <div className="flex items-center justify-between px-4 py-4 text-sm uppercase md:text-base bg-stone-800 text-stone-200 sm:px-6">
       <p className="space-x-4 sm:space-x-6 text-stone-300">
-        <span>23 pizzas</span>
+        <span>{totalCartQuantity} pizzas</span>
         <span>$23.45</span>
       </p>
       <Link to="/cart">Open cart &rarr;</Link>
